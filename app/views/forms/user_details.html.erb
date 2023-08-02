@@ -1,0 +1,144 @@
+<div class="container mt-5">
+  <h1 class="text-center text-warning">User Details Form</h1>
+<%= form_with(model: @user_details, url: user_details_path, local: true) do |form| %>
+
+    <div class="form-group mb-3 mb-3">
+      <%= form.label :firstname, "First Name", class: "form-label" %>
+      <%= form.text_field :firstname, class: "form-control",required:true, placeholder: "Enter your first name" %>
+    </div>
+
+    <div class="form-group mb-3 mb-3">
+      <%= form.label :midname, "Middle Name", class: "form-label" %>
+      <%= form.text_field :midname, class: "form-control",required:true, placeholder: "Enter your middle name" %>
+    </div>
+
+    <div class="form-group mb-3 mb-3">
+    <%= form.label :lastname, "Last Name", class: "form-label" %>
+    <%= form.text_field :lastname, class: "form-control",required:true, placeholder: "Enter your last name" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :age, "Age", class: "form-label" %>
+      <%= form.number_field :age, min: 0, class: "form-control",required:true, placeholder: "Enter your age" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :dob, "Date of Birth", class: "form-label" %>
+      <%= form.text_field :dob, class: "form-control datepicker",required:true, placeholder: "dd/mm/yyyy" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :email, "Email", class: "form-label" %>
+      <%= form.email_field :email, class: "form-control",required:true, placeholder: "Enter your email" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :phone_no, "Phone No", class: "form-label" %>
+      <%= form.text_field :phone_no, class: "form-control",required:true, maxlength: 18, oninput: 'formatPhoneNumber(this)',placeholder: "Enter your phone number" %>
+    </div>
+
+    <div class="form-group mb-3 mb-3">
+      <%= form.label :occupation, "Occupation", class: "form-label" %>
+      <%= form.select :occupation, ["Student", "Professional"], class: "form-control" %>
+    </div>
+
+    <div class="form-group mb-3" id="degree-field">
+      <%= form.label :degree, "Degree", class: "form-label" %>
+      <%= form.text_field :degree, class: "form-control",required:true, placeholder: "Enter your degree" %>
+    </div>
+
+    <div class="form-group mb-3" id="organization-field">
+      <%= form.label :organization, "Organization Name", class: "form-label" %>
+      <%= form.text_field :organization, class: "form-control",required:true, placeholder: "Enter your organization name" %>
+    </div>
+
+    <div class="form-group mb-3" id="experience-field">
+      <%= form.label :experience, "Experience", class: "form-label" %>
+      <%= form.text_field :experience, class: "form-control",required:true, placeholder: "Enter your experience" %>
+    </div>
+
+    <div class="form-group mb-3" id="org-address-field">
+      <%= form.label :org_address, "Organization Address", class: "form-label" %>
+      <%= form.text_area :org_address, rows: 3, class: "form-control",required:true, placeholder: "Enter your organization address" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :about_us, "How did you hear about us?", class: "form-label" %>
+      <%= form.select :about_us, ["Friends", "Family", "Neighbors", "Colleagues", "Others"], class: "form-control" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :interest_rating, "Rate your Interest (1-10)", class: "form-label" %>
+      <%= form.number_field :interest_rating, min: 1, max: 10, class: "form-control",required:true, placeholder: "Enter your interest rating" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :course, "Course You Are Joining", class: "form-label" %>
+      <%= form.text_field :course, class: "form-control",required:true, placeholder: "Enter the course you are joining" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :instagram_account, "Instagram Account", class: "form-label" %>
+      <%= form.text_field :instagram_account, class: "form-control",required:true, placeholder: "Enter your Instagram Account" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :twitter_account, "Twitter Account", class: "form-label" %>
+      <%= form.text_field :twitter_account, class: "form-control",required:true, placeholder: "Enter your Twitter Account" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :facebook_account, "Facebook Account", class: "form-label" %>
+      <%= form.text_field :facebook_account, class: "form-control",required:true, placeholder: "Enter your Facebook Account" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :cgpa, "CGPA", class: "form-label" %>
+      <%= form.number_field :cgpa, step: 0.01, class: "form-control",required:true, placeholder: "Enter your CGPA" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :father_name, "Father's Name", class: "form-label" %>
+      <%= form.text_field :father_name, class: "form-control",required:true, placeholder: "Enter your Father's Name" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :mother_name, "Mother's Name", class: "form-label" %>
+      <%= form.text_field :mother_name, class: "form-control",required:true, placeholder: "Enter your Mother's Name" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :father_mobile, "Father's Mobile Number", class: "form-label" %>
+      <%= form.text_field :father_mobile, class: "form-control",required:true, placeholder: "Enter your Father's Mobile Number" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :mother_mobile, "Mother's Mobile Number", class: "form-label" %>
+      <%= form.text_field :mother_mobile, class: "form-control",required:true, placeholder: "Enter your Mother's Mobile Number" %>
+    </div>
+
+    <%= form.submit "Next", class: "btn btn-warning" %>
+    <%= form.button "Clear", type: "reset", class: "btn btn-secondary" %>
+  <% end %>
+</div>
+
+<script>
+  function formatPhoneNumber(input) {
+    const phoneNumber = input.value.replace(/\D/g, '');
+    if (phoneNumber.length > 0) {
+      let formattedNumber = '+';
+      formattedNumber += phoneNumber.slice(0, 2) + ' ';
+      if (phoneNumber.length > 2) {
+        formattedNumber += phoneNumber.slice(2, 6) + ' ';
+        if (phoneNumber.length > 6) {
+          formattedNumber += phoneNumber.slice(6, 9) + ' ';
+          if (phoneNumber.length > 9) {
+            formattedNumber += `(${phoneNumber.slice(9)})`;
+          }
+        }
+      }
+      input.value = formattedNumber;
+    }
+  }
+</script>
+</body>

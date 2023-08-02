@@ -1,0 +1,97 @@
+
+  <div class="container mt-5">
+    <h1 class="text-center text-warning">Address Details Form</h1>
+    <%= form_with(model: @address_details, url: address_details_path, method: :post) do |form| %>
+      <h2>Temporary Address</h2>
+      <div class="form-group mb-3">
+        <%= form.label :temp_door_no, "Door No" %>
+        <%= form.text_field :temp_door_no, class: "form-control",required: true, placeholder: "Enter temporary door number" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :temp_street_name, "Street Name" %>
+        <%= form.text_field :temp_street_name, class: "form-control",required: true, placeholder: "Enter temporary street name" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :temp_landmark, "Landmark" %>
+        <%= form.text_field :temp_landmark, class: "form-control",required: true, placeholder: "Enter temporary landmark" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :temp_post, "Post" %>
+        <%= form.text_field :temp_post, class: "form-control",required: true, placeholder: "Enter temporary post" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :temp_district, "District" %>
+        <%= form.text_field :temp_district, class: "form-control",required: true, placeholder: "Enter temporary district" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :temp_state, "State" %>
+        <%= form.text_field :temp_state, class: "form-control",required: true, placeholder: "Enter temporary state" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :temp_pincode, "Pincode" %>
+        <%= form.text_field :temp_pincode, class: "form-control",required: true, placeholder: "Enter temporary pincode" %>
+      </div>
+
+      <h2>Permanent Address</h2>
+      <div class="form-group mb-3">
+        <%= form.label :perm_door_no, "Door No" %>
+        <%= form.text_field :perm_door_no, class: "form-control",required: true, placeholder: "Enter permanent door number" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :perm_street_name, "Street Name" %>
+        <%= form.text_field :perm_street_name, class: "form-control",required: true, placeholder: "Enter permanent street name" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :perm_landmark, "Landmark" %>
+        <%= form.text_field :perm_landmark, class: "form-control",required: true, placeholder: "Enter permanent landmark" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :perm_post, "Post" %>
+        <%= form.text_field :perm_post, class: "form-control",required: true, placeholder: "Enter permanent post" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :perm_district, "District" %>
+        <%= form.text_field :perm_district, class: "form-control",required: true, placeholder: "Enter permanent district" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :perm_state, "State" %>
+        <%= form.text_field :perm_state, class: "form-control",required: true, placeholder: "Enter permanent state" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :perm_pincode, "Pincode" %>
+        <%= form.text_field :perm_pincode, class: "form-control",required: true, placeholder: "Enter permanent pincode" %>
+      </div>
+
+      <h2>Person Referred This Course</h2>
+      <div class="form-group mb-3">
+        <%= form.label :ref_name, "Nominee Name" %>
+        <%= form.text_field :ref_name, class: "form-control",required: true, placeholder: "Enter referrer's name" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :ref_contact, "Contact No" %>
+        <%= form.text_field :ref_contact, class: "form-control",required: true, placeholder: "Enter referrer's contact number" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :ref_mail, "Email" %>
+        <%= form.email_field :ref_mail, class: "form-control",required: true, placeholder: "Enter referrer's email" %>
+      </div>
+
+      <%= form.submit "Next", class: "btn btn-warning" %>
+      <%= form.button "Clear", type: "reset", class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+</body>

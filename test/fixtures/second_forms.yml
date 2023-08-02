@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: MyString
+  mail: MyString
+  temp_door_no: MyString
+  temp_street_name: MyString
+  temp_landmark: MyString
+  temp_post: MyString
+  temp_district: MyString
+  temp_state: MyString
+  temp_pincode: MyString
+  perm_door_no: MyString
+  perm_street_name: MyString
+  perm_landmark: MyString
+  perm_post: MyString
+  perm_district: MyString
+  perm_state: MyString
+  perm_pincode: MyString
+  ref_name: MyString
+  ref_contact: MyString
+  ref_mail: MyString
+
+two:
+  name: MyString
+  phone: MyString
+  mail: MyString
+  temp_door_no: MyString
+  temp_street_name: MyString
+  temp_landmark: MyString
+  temp_post: MyString
+  temp_district: MyString
+  temp_state: MyString
+  temp_pincode: MyString
+  perm_door_no: MyString
+  perm_street_name: MyString
+  perm_landmark: MyString
+  perm_post: MyString
+  perm_district: MyString
+  perm_state: MyString
+  perm_pincode: MyString
+  ref_name: MyString
+  ref_contact: MyString
+  ref_mail: MyString

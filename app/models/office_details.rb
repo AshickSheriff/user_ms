@@ -1,0 +1,2 @@
+class OfficeDetails < ApplicationRecord
+end

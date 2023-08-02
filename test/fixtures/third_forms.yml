@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  phone_no: MyString
+  tenth_mark: MyString
+  twelfth_mark: MyString
+  cgpa: MyString
+  aadhar_no: MyString
+  pan_no: MyString
+  account_no: MyString
+  no_of_siblings: 1
+  first_graduate: MyString
+  skills: MyString
+  differently_abled: MyString
+  completed_graduation: MyString
+
+two:
+  name: MyString
+  email: MyString
+  phone_no: MyString
+  tenth_mark: MyString
+  twelfth_mark: MyString
+  cgpa: MyString
+  aadhar_no: MyString
+  pan_no: MyString
+  account_no: MyString
+  no_of_siblings: 1
+  first_graduate: MyString
+  skills: MyString
+  differently_abled: MyString
+  completed_graduation: MyString

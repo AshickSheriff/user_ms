@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-center">
+      <a class="navbar-brand text-light" href="#">My Forms</a>
+    </div>
+  </div>
+  <div class="nav-item">
+     <%= form_tag(search_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
+      <div class="input-group">
+      <%= text_field_tag(:query, params[:query], class: "form-control", placeholder: "Enter id to search") %>
+      <%= submit_tag('Search', class: "btn btn-warning my-2 my-sm-0") %>
+    </div>
+    </div>
+    <% end %>
+</nav>
+
+<div class="container custom-container mt-5 d-flex justify-content-center" style="max-width: 600px;">
+ 
+  <div class="border rounded p-4 shadow-lg bg-light">
+ 
+    <h1 class="welcome-text text-center">Welcome to My App!</h1>
+    <p class="welcome-text text-center">Sign in or sign up to get started:</p>
+ 
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary mb-2 btn-block" %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success mb-2 btn-block" %>
+      </div>
+    </div>
+ 
+    <% if user_signed_in? %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= link_to "Signout", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-block" %>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <%= link_to user_details_path, class: "btn btn-info btn-block" do %>
+              Add Form
+            <% end %>
+          </div>
+        </div>
+      </div>
+    
+    <% end %>
+  </div>
+</div>
