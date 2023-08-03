@@ -9,43 +9,47 @@
       <div class="inner-form">
         <div class="input-group">
           <%= text_field_tag(:query, params[:query], class: "form-control", placeholder: "Enter ID to search") %>
-          <%= text_field_tag(:column_name, params[:column_name], class: "form-control", placeholder: "Enter column name") %>
+          <%= text_field_tag(:column_names, params[:column_names], class: "form-control", placeholder: "Enter column names (comma-separated)") %>
           <%= submit_tag('Search', class: "btn btn-warning") %>
         </div>
       </div>
     <% end %>
   </div>
 
+  <div class="container d-flex align-items-center justify-content-center">
+  <%= link_to "Home", root_path, class: "btn btn-secondary mt-3" %>
+</div>
+
+
   <div class="search-results m-5 text-dark p-5">
     <% if @results.present? %>
-      <h3>Result I:</h3>
+      <h3>Search Results:</h3>
       <ul>
         <% @results.each do |result| %>
-          <li>
-            <strong>Name:</strong> <%= result['name']&.first %>
-          </li>
-          <br>
-          <li>
-            <strong>Phone:</strong> <%= result['phone_no']&.first %>
-          </li>
-          <br>
-          <li>
-            <strong>Mail:</strong> <%= result['email']&.first %>
-          </li>
-          <br>
-        <% end %>
-      </ul>
-      <h3>Result II:</h3>
-      <ul>
-        <% @results.each do |result| %>
-          <% if params[:column_name].present? %>
-            <% column_name = params[:column_name].to_s.downcase %>
-            <% if result.key?(column_name) %>
-              <li>
-                <strong><%= params[:column_name].titleize %>:</strong> <%= result[column_name].first %>
-              </li>
-              <br>
+          <% if params[:column_names].present? %>
+            <% column_names = params[:column_names].split(",").map(&:strip) %>
+            <% column_names.each do |column_name| %>
+              <% column_name = column_name.to_s.downcase %>
+              <% if result.key?(column_name) %>
+                <li>
+                  <strong><%= column_name.titleize %>:</strong> <%= result[column_name].first %>
+                </li>
+                <br>
+              <% end %>
             <% end %>
+          <% else %>
+            <li>
+              <strong>Name:</strong> <%= result['name']&.first %>
+            </li>
+            <br>
+            <li>
+              <strong>Phone:</strong> <%= result['phone_no']&.first %>
+            </li>
+            <br>
+            <li>
+              <strong>Mail:</strong> <%= result['email']&.first %>
+            </li>
+            <br>
           <% end %>
         <% end %>
       </ul>

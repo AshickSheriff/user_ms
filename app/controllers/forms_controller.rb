@@ -14,13 +14,17 @@ end
   def user_details
     @user_details = UserDetails.new(session[:user_details] || {})
   end
-
+  
   def create_user_details
-    @user_details = UserDetails.new(params[:user_details])
+    @user_details = UserDetails.new(user_details1)
+    puts "Hello AQ1"
+
     if @user_details.valid?
+      puts "Hello AQ2"
       session[:user_details] = @user_details.attributes
       redirect_to address_details_path
     else
+      puts "block else "
       render :user_details 
     end
   end
@@ -51,10 +55,6 @@ end
     @address_details = AddressDetails.new(session[:address_details] || {})
     @office_details = OfficeDetails.new(params[:office_details])
 
-
-    # @user_details.save
-    # @address_details.save
-    # @office_details.save
     
     if @user_details.save && @address_details.save && @office_details.save
       solr = RSolr.connect(url: 'http://localhost:8983/solr/gettingstarted')
@@ -76,7 +76,7 @@ end
 
   private
 
-  def user_details
+  def user_details1
     params.require(:user_details).permit(
     :firstname, :midname, :lastname, :age, :dob, :email, :phone_no,
     :occupation, :degree, :organization, :experience, :org_address,

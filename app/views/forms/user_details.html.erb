@@ -34,7 +34,7 @@
 
     <div class="form-group mb-3">
       <%= form.label :phone_no, "Phone No", class: "form-label" %>
-      <%= form.text_field :phone_no, class: "form-control",required:true, maxlength: 18, oninput: 'formatPhoneNumber(this)',placeholder: "Enter your phone number" %>
+      <%= form.text_field :phone_no, class: "form-control", placeholder: "Enter your phone number" %>
     </div>
 
     <div class="form-group mb-3 mb-3">
@@ -121,24 +121,3 @@
     <%= form.button "Clear", type: "reset", class: "btn btn-secondary" %>
   <% end %>
 </div>
-
-<script>
-  function formatPhoneNumber(input) {
-    const phoneNumber = input.value.replace(/\D/g, '');
-    if (phoneNumber.length > 0) {
-      let formattedNumber = '+';
-      formattedNumber += phoneNumber.slice(0, 2) + ' ';
-      if (phoneNumber.length > 2) {
-        formattedNumber += phoneNumber.slice(2, 6) + ' ';
-        if (phoneNumber.length > 6) {
-          formattedNumber += phoneNumber.slice(6, 9) + ' ';
-          if (phoneNumber.length > 9) {
-            formattedNumber += `(${phoneNumber.slice(9)})`;
-          }
-        }
-      }
-      input.value = formattedNumber;
-    }
-  }
-</script>
-</body>
